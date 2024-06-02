@@ -1,74 +1,108 @@
-### TextBelt Open Source
-
-TextBelt Open Source is a REST API that sends outgoing SMS.  It uses a free mechanism for sending texts, different from the more reliable paid version available at https://textbelt.com.
-
-This project uses carrier-specific gateways to deliver your text messages for free, and without ads.  The service is fairly reliable when configured on a private server and has sent over 1 million texts.
-
-Send a text with a simple POST request:
-
-```sh
-$ curl -X POST http://my_textbelt_server/text \
+<div class="Box-sc-g0xbh4-0 bJMeLZ js-snippet-clipboard-copy-unpositioned" data-hpc="true"><article class="markdown-body entry-content container-lg" itemprop="text"><div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">TextBelt 开源</font></font></h3><a id="user-content-textbelt-open-source" class="anchor" aria-label="永久链接：TextBelt 开源" href="#textbelt-open-source"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">TextBelt Open Source 是一个用于发送短信的 REST API。它使用免费机制发送短信，与</font></font><a href="https://textbelt.com" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">https://textbelt.com</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">上提供的更可靠的付费版本不同。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">该项目使用运营商专用网关免费发送短信，且不包含广告。该服务在私人服务器上配置时相当可靠，已发送了超过 100 万条短信。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">使用简单的 POST 请求发送文本：</font></font></p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto"><pre>$ curl -X POST http://my_textbelt_server/text \
    -d number=5551234567 \
-   -d "message=I sent this message for free with Textbelt"
-```
-
-`number` and `message` parameters are required.
-
-If you are using the paid version at https://textbelt.com, run the following (more examples available on the homepage):
-
-```sh
-$ curl -X POST https://textbelt.com/text \
+   -d <span class="pl-s"><span class="pl-pds">"</span>message=I sent this message for free with Textbelt<span class="pl-pds">"</span></span></pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="$ curl -X POST http://my_textbelt_server/text \
    -d number=5551234567 \
-   -d "message=I sent this message for free with Textbelt" \
-   -d key=abcdef123456
-```
+   -d &quot;message=I sent this message for free with Textbelt&quot;" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<p dir="auto"><code>number</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">并且</font></font><code>message</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">参数是必需的。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"></font><a href="https://textbelt.com" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">如果您使用的是https://textbelt.com</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">上的付费版本</font><font style="vertical-align: inherit;">，请运行以下命令（主页上提供了更多示例）：</font></font></p>
+<div class="highlight highlight-source-shell notranslate position-relative overflow-auto" dir="auto"><pre>$ curl -X POST https://textbelt.com/text \
+   -d number=5551234567 \
+   -d <span class="pl-s"><span class="pl-pds">"</span>message=I sent this message for free with Textbelt<span class="pl-pds">"</span></span> \
+   -d key=abcdef123456</pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="$ curl -X POST https://textbelt.com/text \
+   -d number=5551234567 \
+   -d &quot;message=I sent this message for free with Textbelt&quot; \
+   -d key=abcdef123456" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">成功与失败</font></font></h3><a id="user-content-success-and-failure" class="anchor" aria-label="永久链接：成功与失败" href="#success-and-failure"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">示例成功：</font></font></p>
+<div class="highlight highlight-source-json notranslate position-relative overflow-auto" dir="auto"><pre>{<span class="pl-ent">"success"</span>:<span class="pl-c1">true</span>}</pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="{&quot;success&quot;:true}" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">请注意，成功意味着该消息已发送到 Textbelt 的提供商列表。我们无法保证在您的网络上交付。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">样本失败：</font></font></p>
+<div class="highlight highlight-source-json notranslate position-relative overflow-auto" dir="auto"><pre>{<span class="pl-ent">"success"</span>:<span class="pl-c1">false</span>,<span class="pl-ent">"message"</span>:<span class="pl-s"><span class="pl-pds">"</span>Exceeded quota for this phone number.<span class="pl-pds">"</span></span>}</pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="{&quot;success&quot;:false,&quot;message&quot;:&quot;Exceeded quota for this phone number.&quot;}" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">作为模块使用</font></font></h3><a id="user-content-usage-as-a-module" class="anchor" aria-label="永久链接：作为模块使用" href="#usage-as-a-module"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">虽然这个存储库包含一个快速服务器，因此您可以运行自己的 Web 应用程序实例，但您也可以使用它在您的项目中发送短信。</font></font></p>
+<div class="markdown-heading" dir="auto"><h4 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">配置：</font></font></h4><a id="user-content-configuration" class="anchor" aria-label="永久链接：配置：" href="#configuration"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">此项目用于</font></font><a href="https://www.npmjs.com/package/nodemailer" rel="nofollow"><code>nodemailer</code></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">发送电子邮件。设置</font></font><code>lib/config.js</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">如下：</font></font></p>
+<ul dir="auto">
+<li><strong><code>transport</code></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">应该是 Nodemailer 传输</font></font><a href="https://nodemailer.com/plugins/create/#transports" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">记录在这里</font></font></a></li>
+<li><strong><code>mailOptions</code></strong><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">字段至少应该包括该字段，但您可以包括</font><a href="https://nodemailer.com/message/" rel="nofollow"><font style="vertical-align: inherit;">此处记录的</font></a></font><code>from</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">任何字段</font><font style="vertical-align: inherit;">。</font></font><a href="https://nodemailer.com/message/" rel="nofollow"><font style="vertical-align: inherit;"></font></a><font style="vertical-align: inherit;"></font></li>
+</ul>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">其中包括使用 SMTP 发送的示例传输。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">例如，使用默认设置发送文本：</font></font></p>
+<div class="highlight highlight-source-js notranslate position-relative overflow-auto" dir="auto"><pre><span class="pl-k">var</span> <span class="pl-s1">text</span> <span class="pl-c1">=</span> <span class="pl-en">require</span><span class="pl-kos">(</span><span class="pl-s">'textbelt'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
 
-### Success and Failure
-Sample success:
-
-```json
-{"success":true}
-```
-
-Note that success means that the message was sent to Textbelt's list of providers.  We can't guarantee delivery on your network.
-
-Sample failure:
-
-```json
-{"success":false,"message":"Exceeded quota for this phone number."}
-```
-
-### Usage as a module
-
-Though this repository contains an express server so you may run your own
-instance of the web app, you may also use it to send text messages in your
-project.
-
-#### Configuration:
-
-This project uses [`nodemailer`](https://www.npmjs.com/package/nodemailer) for sending emails. Set up `lib/config.js` with the following:
-
-- **`transport`** should be a Nodemailer transport [documented here](https://nodemailer.com/plugins/create/#transports)
-- **`mailOptions`** fields should include at least include the `from` field, but you can include any of the fields [documented here](https://nodemailer.com/message/).
-
-A sample transport with SMTP sending is included.
-
-For example, to send a text using the default settings:
-
-```js
-var text = require('textbelt');
+<span class="pl-s1">text</span><span class="pl-kos">.</span><span class="pl-en">send</span><span class="pl-kos">(</span><span class="pl-s">'9491234567'</span><span class="pl-kos">,</span> <span class="pl-s">'A sample text message!'</span><span class="pl-kos">,</span> <span class="pl-c1">undefined</span><span class="pl-kos">,</span> <span class="pl-k">function</span><span class="pl-kos">(</span><span class="pl-s1">err</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+  <span class="pl-k">if</span> <span class="pl-kos">(</span><span class="pl-s1">err</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+    <span class="pl-smi">console</span><span class="pl-kos">.</span><span class="pl-en">log</span><span class="pl-kos">(</span><span class="pl-s1">err</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
+  <span class="pl-kos">}</span>
+<span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span></pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="var text = require('textbelt');
 
 text.send('9491234567', 'A sample text message!', undefined, function(err) {
   if (err) {
     console.log(err);
   }
-});
-```
+});" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">您还可以提供一个区域（有效选择为</font></font><code>us</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">、</font></font><code>intl</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">或</font></font><code>canada</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">）</font></font></p>
+<div class="highlight highlight-source-js notranslate position-relative overflow-auto" dir="auto"><pre><span class="pl-k">var</span> <span class="pl-s1">text</span> <span class="pl-c1">=</span> <span class="pl-en">require</span><span class="pl-kos">(</span><span class="pl-s">'textbelt'</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
 
-You can also supply a region (valid choices are `us`, `intl`, or `canada`)
+<span class="pl-c">// Canada</span>
+<span class="pl-s1">text</span><span class="pl-kos">.</span><span class="pl-en">send</span><span class="pl-kos">(</span><span class="pl-s">'9491234567'</span><span class="pl-kos">,</span> <span class="pl-s">'A sample text message!'</span><span class="pl-kos">,</span> <span class="pl-s">'canada'</span><span class="pl-kos">,</span> <span class="pl-k">function</span><span class="pl-kos">(</span><span class="pl-s1">err</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+...
+<span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span>
 
-```js
-var text = require('textbelt');
+<span class="pl-c">// International</span>
+<span class="pl-s1">text</span><span class="pl-kos">.</span><span class="pl-en">send</span><span class="pl-kos">(</span><span class="pl-s">'1119491234567'</span><span class="pl-kos">,</span> <span class="pl-s">'Bonjour!'</span><span class="pl-kos">,</span> <span class="pl-s">'intl'</span><span class="pl-kos">,</span> <span class="pl-k">function</span><span class="pl-kos">(</span><span class="pl-s1">err</span><span class="pl-kos">)</span> <span class="pl-kos">{</span>
+...
+<span class="pl-kos">}</span><span class="pl-kos">)</span><span class="pl-kos">;</span></pre><div class="zeroclipboard-container">
+    <clipboard-copy aria-label="Copy" class="ClipboardButton btn btn-invisible js-clipboard-copy m-2 p-0 tooltipped-no-delay d-flex flex-justify-center flex-items-center" data-copy-feedback="Copied!" data-tooltip-direction="w" value="var text = require('textbelt');
 
 // Canada
 text.send('9491234567', 'A sample text message!', 'canada', function(err) {
@@ -78,62 +112,60 @@ text.send('9491234567', 'A sample text message!', 'canada', function(err) {
 // International
 text.send('1119491234567', 'Bonjour!', 'intl', function(err) {
 ...
-});
-```
-
-### Usage as a standalone server
-
-Textbelt can be run as a standalone server with: `node server/app.js`.  Be sure to install dependencies first with `npm install` and you've configured nodemailer in `lib/config.js`. This project also relies on redis. To install redis locally, please see the [redis documentation](http://redis.io/topics/quickstart). Before launching the app, ensure redis is running on port 6379 with `redis-server`.
-
-By default, the server listens on port 9090.
-
-Don't forget to set `fromAddress` in `lib/config.js` to the email address you want to send from.
-
-### Canadian and International endpoints
-
-The /text endpoint supports U.S. phone numbers (and parts of Canada).
-
-For Canadian texts, curl `http://textbelt.com/canada`.
-
-For international texts, curl `http://textbelt.com/intl`.
-
-Canadian and international support may not be complete.  Refer to the list of supported carriers.
-
-### Textbelt Clients
-
-  * ruby - [djds23/textbelt-gem](https://github.com/djds23/textbelt-gem)
-  * go - [dietsche/textbelt](https://github.com/dietsche/textbelt), [lateralusd/textbelt](https://github.com/lateralusd/textbelt)
-  * python - [ksdme/py-textbelt](https://github.com/ksdme/py-textbelt)
-  * node.js - [minond/textbelt](https://github.com/minond/textbelt), [ajay-gandhi/textbelt](https://github.com/ajay-gandhi/textbelt), [soondobu/mtextbelt](https://github.com/soondobu/mtextbelt)
-  * php - [ctrlaltdylan/courier](https://github.com/ctrlaltdylan/courier), [securingsincity/phpsms](https://github.com/securingsincity/phpsms)
-  * bash - [cfalk/MessageMe](https://github.com/cfalk/MessageMe)
-  * html/js/mobile webpage - [mLuby/SMS](https://github.com/mLuby/smsHR), [daluu/textbelt-clients](https://github.com/daluu/textbelt-clients)
-  * Browser extension - [Chrome](https://chrome.google.com/webstore/detail/textbelter/clciehobfheendclpnmbgbalelignpoa), [Firefox](https://addons.mozilla.org/en-US/firefox/addon/textbelter/), [Safari](https://github.com/daluu/textbelt-clients/raw/master/textbelter.safariextz), [Opera](https://addons.opera.com/en/extensions/details/textbelter/?display=en)
-  * Windows Phone - [TextBelter](https://www.microsoft.com/en-us/store/apps/textbelter/9nblggh1z2dg)
-  * [SendSMS Mac App](https://itunes.apple.com/app/sendsms/id584131262?mt=12)
-  * [OSX dashboard widget](https://github.com/daluu/textbelt-clients/releases/download/1.0/TextBelter.wdgt.zip)
-  * [Windows 7/Vista gadget](https://github.com/daluu/textbelt-clients/releases/download/1.0/textbelter.gadget.zip)
-
-
-### Notes and Limitations
-
- * Some carriers are picky about which messages they deliver. A "success" response from Textbelt means that your message was given to the carrier.
-
- *  Some carriers may deliver text messages from "txt@textbelt.com", "foo@bar.com", or whatever you have configured as `fromAddress` in `lib/config.js`.
-
- *  Supported U.S. carriers: Alltel, Ameritech, AT&T Wireless, Boost, CellularOne, Cingular, Edge Wireless, Nex-Tech Wireless, Project Fi, Sprint PCS, Telus Mobility, T-Mobile, Metro PCS, Nextel, O2, Orange, Qwest, Rogers Wireless, Ting, US Cellular, Verizon, Virgin Mobile.
-
- *  Supported U.S. and Canadian carriers (/canada):  3 River Wireless, ACS Wireless, AT&T, Alltel, BPL Mobile, Bell Canada, Bell Mobility, Bell Mobility (Canada), Blue Sky Frog, Bluegrass Cellular, Boost Mobile, Carolina West Wireless, Cellular One, Cellular South, Centennial Wireless, CenturyTel, Cingular (Now AT&T), Clearnet, Comcast, Corr Wireless Communications, Dobson, Edge Wireless, Fido, Golden Telecom, Helio, Houston Cellular, Idea Cellular, Illinois Valley Cellular, Inland Cellular Telephone, MCI, MTS, Metro PCS, Metrocall, Metrocall 2-way, Microcell, Midwest Wireless, Mobilcomm, Nextel, OnlineBeep, PCS One, President's Choice, Public Service Cellular, Qwest, Republic Wireless, Rogers AT&T Wireless, Rogers Canada, Satellink, Solo Mobile, Southwestern Bell, Sprint, Sumcom, Surewest Communicaitons, T-Mobile, Telus, Tracfone, Triton, US Cellular, US West, Unicel, Verizon, Virgin Mobile, Virgin Mobile Canada, West Central Wireless, Western Wireless
-
- *  Supported international carriers (/intl):  Chennai RPG Cellular, Chennai Skycell / Airtel, Comviq, DT T-Mobile, Delhi Aritel, Delhi Hutch, Dutchtone / Orange-NL, EMT, Escotel, German T-Mobile, Goa BPLMobil, Golden Telecom, Gujarat Celforce, JSM Tele-Page, Kerala Escotel, Kolkata Airtel, Kyivstar, LMT, Lauttamus Communication, Maharashtra BPL Mobile, Maharashtra Idea Cellular, Manitoba Telecom Systems, Meteor, MiWorld, Mobileone, Mobilfone, Mobility Bermuda, Mobistar Belgium, Mobitel Tanzania, Mobtel Srbija, Movistar, Mumbai BPL Mobile, Netcom, Ntelos, O2, O2 (M-mail), One Connect Austria, OnlineBeep, Optus Mobile, Orange, Orange Mumbai, Orange NL / Dutchtone, Oskar, P&T Luxembourg, Personal Communication, Pondicherry BPL Mobile, Primtel, SCS-900, SFR France, Safaricom, Satelindo GSM, Simple Freedom, Smart Telecom, Southern LINC, Sunrise Mobile, Surewest Communications, Swisscom, Telcel Mexico, T-Mobile Austria, T-Mobile Germany, T-Mobile UK, TIM, TSR Wireless, Tamil Nadu BPL Mobile, Tele2 Latvia, Telefonica Movistar, Telenor, Teletouch, Telia Denmark, UMC, Uraltel, Uttar Pradesh Escotel, Vessotel, Vodafone Italy, Vodafone Japan, Vodafone UK, Wyndtell
-
-### License (MIT)
-
-TextBelt
-Copyright (C) 2018 by Ian Webster
-
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
-
-The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+});" tabindex="0" role="button">
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-copy js-clipboard-copy-icon">
+    <path d="M0 6.75C0 5.784.784 5 1.75 5h1.5a.75.75 0 0 1 0 1.5h-1.5a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-1.5a.75.75 0 0 1 1.5 0v1.5A1.75 1.75 0 0 1 9.25 16h-7.5A1.75 1.75 0 0 1 0 14.25Z"></path><path d="M5 1.75C5 .784 5.784 0 6.75 0h7.5C15.216 0 16 .784 16 1.75v7.5A1.75 1.75 0 0 1 14.25 11h-7.5A1.75 1.75 0 0 1 5 9.25Zm1.75-.25a.25.25 0 0 0-.25.25v7.5c0 .138.112.25.25.25h7.5a.25.25 0 0 0 .25-.25v-7.5a.25.25 0 0 0-.25-.25Z"></path>
+</svg>
+      <svg aria-hidden="true" height="16" viewBox="0 0 16 16" version="1.1" width="16" data-view-component="true" class="octicon octicon-check js-clipboard-check-icon color-fg-success d-none">
+    <path d="M13.78 4.22a.75.75 0 0 1 0 1.06l-7.25 7.25a.75.75 0 0 1-1.06 0L2.22 9.28a.751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018L6 10.94l6.72-6.72a.75.75 0 0 1 1.06 0Z"></path>
+</svg>
+    </clipboard-copy>
+  </div></div>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">用作独立服务器</font></font></h3><a id="user-content-usage-as-a-standalone-server" class="anchor" aria-label="永久链接：用作独立服务器" href="#usage-as-a-standalone-server"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Textbelt 可以作为独立服务器运行：</font></font><code>node server/app.js</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。确保先使用 安装依赖项，</font></font><code>npm install</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">并且已经在 中配置了 nodemailer </font></font><code>lib/config.js</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。此项目还依赖于 redis。要在本地安装 redis，请参阅</font></font><a href="http://redis.io/topics/quickstart" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">redis 文档</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。在启动应用程序之前，请确保 redis 在端口 6379 上运行</font></font><code>redis-server</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">默认情况下，服务器监听端口 9090。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">不要忘记设置</font></font><code>fromAddress</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">您</font></font><code>lib/config.js</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">想要发送的电子邮件地址。</font></font></p>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">加拿大和国际终点站</font></font></h3><a id="user-content-canadian-and-international-endpoints" class="anchor" aria-label="永久链接：加拿大和国际端点" href="#canadian-and-international-endpoints"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">/text 端点支持美国电话号码（以及加拿大部分地区）。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">对于加拿大文本，请使用 curl </font></font><code>http://textbelt.com/canada</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">对于国际文本，请使用 curl </font></font><code>http://textbelt.com/intl</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">加拿大和国际支持可能不完整。请参阅受支持的运营商列表。</font></font></p>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Textbelt 客户</font></font></h3><a id="user-content-textbelt-clients" class="anchor" aria-label="永久链接：Textbelt 客户" href="#textbelt-clients"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<ul dir="auto">
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ruby- </font></font><a href="https://github.com/djds23/textbelt-gem"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">djds23/textbelt-gem</font></font></a></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">前往 - </font></font><a href="https://github.com/dietsche/textbelt"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">dietsche/textbelt</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">、</font></font><a href="https://github.com/lateralusd/textbelt"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">lateralusd/textbelt</font></font></a></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">python- </font></font><a href="https://github.com/ksdme/py-textbelt"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ksdme/py-textbelt</font></font></a></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">node.js - </font></font><a href="https://github.com/minond/textbelt"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">minond/textbelt</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">、</font></font><a href="https://github.com/ajay-gandhi/textbelt"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ajay-gandhi/textbelt</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">、</font></font><a href="https://github.com/soondobu/mtextbelt"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">soondobu/mtextbelt</font></font></a></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">php- </font></font><a href="https://github.com/ctrlaltdylan/courier"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">ctrlaltdylan/courier</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">，</font></font><a href="https://github.com/securingsincity/phpsms"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">securesincity/phpsms</font></font></a></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">bash—— </font></font><a href="https://github.com/cfalk/MessageMe"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">cfalk/MessageMe</font></font></a></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">html/js/移动网页 - </font></font><a href="https://github.com/mLuby/smsHR"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">mLuby/SMS</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> , </font></font><a href="https://github.com/daluu/textbelt-clients"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">daluu/textbelt-clients</font></font></a></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">浏览器扩展 - </font></font><a href="https://chrome.google.com/webstore/detail/textbelter/clciehobfheendclpnmbgbalelignpoa" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Chrome</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">、</font></font><a href="https://addons.mozilla.org/en-US/firefox/addon/textbelter/" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Firefox</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">、</font></font><a href="https://github.com/daluu/textbelt-clients/raw/master/textbelter.safariextz"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Safari</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">、</font></font><a href="https://addons.opera.com/en/extensions/details/textbelter/?display=en" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Opera</font></font></a></li>
+<li><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Windows Phone - </font></font><a href="https://www.microsoft.com/en-us/store/apps/textbelter/9nblggh1z2dg" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">TextBelter</font></font></a></li>
+<li><a href="https://itunes.apple.com/app/sendsms/id584131262?mt=12" rel="nofollow"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">SendSMS Mac 应用程序</font></font></a></li>
+<li><a href="https://github.com/daluu/textbelt-clients/releases/download/1.0/TextBelter.wdgt.zip"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">OSX 仪表板小工具</font></font></a></li>
+<li><a href="https://github.com/daluu/textbelt-clients/releases/download/1.0/textbelter.gadget.zip"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">Windows 7/Vista 小工具</font></font></a></li>
+</ul>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">注意事项和限制</font></font></h3><a id="user-content-notes-and-limitations" class="anchor" aria-label="永久链接：注意事项和限制" href="#notes-and-limitations"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<ul dir="auto">
+<li>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">有些运营商对于所要发送的消息非常挑剔。Textbelt 的“成功”响应表示您的消息已发送给运营商。</font></font></p>
+</li>
+<li>
+<p dir="auto"><font style="vertical-align: inherit;"></font><a href="mailto:txt@textbelt.com"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">一些运营商可能会从“ txt@textbelt.com</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> ”、“ </font></font><a href="mailto:foo@bar.com"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">foo@bar.com</font></font></a><font style="vertical-align: inherit;"><font style="vertical-align: inherit;"> ”或您</font></font><code>fromAddress</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">在 中配置的任何地址</font><font style="vertical-align: inherit;">发送短信</font></font><code>lib/config.js</code><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">。</font></font></p>
+</li>
+<li>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">支持的美国运营商：Alltel、Ameritech、AT&amp;T Wireless、Boost、CellularOne、Cingular、Edge Wireless、Nex-Tech Wireless、Project Fi、Sprint PCS、Telus Mobility、T-Mobile、Metro PCS、Nextel、O2、Orange、Qwest、Rogers Wireless、Ting、US Cellular、Verizon、Virgin Mobile。</font></font></p>
+</li>
+<li>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">支持的美国和加拿大运营商 (/canada)：3 River Wireless、ACS Wireless、AT&amp;T、Alltel、BPL Mobile、Bell Canada、Bell Mobility、Bell Mobility (Canada)、Blue Sky Frog、Bluegrass Cellular、Boost Mobile、Carolina West Wireless、Cellular One、Cellular South、Centennial Wireless、CenturyTel、Cingular (Now AT&amp;T)、Clearnet、Comcast、Corr Wireless Communications、Dobson、Edge Wireless、Fido、Golden Telecom、Helio、Houston Cellular、Idea Cellular、Illinois Valley Cellular、Inland Cellular Telephone、MCI、MTS、Metro PCS、Metrocall、Metrocall 2-way、Microcell、Midwest Wireless、Mobilcomm、Nextel、OnlineBeep、PCS One、President's Choice、Public Service Cellular、Qwest、Republic Wireless、Rogers AT&amp;T Wireless、Rogers Canada、Satellink、Solo Mobile、Southwestern Bell、Sprint、Sumcom、Surewest Communicaitons、T-Mobile、Telus、Tracfone、Triton、US蜂窝、美国西部、Unicel、Verizon、Virgin Mobile、Virgin Mobile 加拿大、West Central Wireless、Western Wireless</font></font></p>
+</li>
+<li>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">支持的国际运营商 (/intl)：Chennai RPG Cellular、Chennai Skycell / Airtel、Comviq、DT T-Mobile、Delhi Aritel、Delhi Hutch、Dutchtone / Orange-NL、EMT、Escotel、German T-Mobile、Goa BPLMobil、Golden Telecom、Gujarat Celforce、JSM Tele-Page、Kerala Escotel、Kolkata Airtel、Kyivstar、LMT、Lauttamus Communication、Maharashtra BPL Mobile、Maharashtra Idea Cellular、Manitoba Telecom Systems、Meteor、MiWorld、Mobileone、Mobilfone、Mobility Bermuda、Mobistar Belgium、Mobitel Tanzania、Mobtel Srbija、Movistar、Mumbai BPL Mobile、Netcom、Ntelos、O2、O2 (M-mail)、One Connect Austria、OnlineBeep、Optus Mobile、Orange、Orange Mumbai、Orange NL / Dutchtone、Oskar、P&amp;T Luxembourg、Personal Communication、本地治里 BPL Mobile、Primtel、SCS-900、SFR France、Safaricom、Satelindo GSM、Simple Freedom、Smart Telecom、Southern LINC、Sunrise Mobile、Surewest Communications、Swisscom、Telcel Mexico、T-Mobile Austria、T-Mobile Germany、T-Mobile UK、TIM、TSR Wireless、泰米尔纳德邦 BPL Mobile、Tele2 Latvia、Telefonica Movistar、Telenor、Teletouch、Telia Denmark、UMC、Uraltel、北方邦 Escotel、Vessotel、沃达丰意大利、沃达丰日本、沃达丰英国、Wyndtell</font></font></p>
+</li>
+</ul>
+<div class="markdown-heading" dir="auto"><h3 tabindex="-1" class="heading-element" dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">许可证 (MIT)</font></font></h3><a id="user-content-license-mit" class="anchor" aria-label="永久链接：许可证（MIT）" href="#license-mit"><svg class="octicon octicon-link" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path d="m7.775 3.275 1.25-1.25a3.5 3.5 0 1 1 4.95 4.95l-2.5 2.5a3.5 3.5 0 0 1-4.95 0 .751.751 0 0 1 .018-1.042.751.751 0 0 1 1.042-.018 1.998 1.998 0 0 0 2.83 0l2.5-2.5a2.002 2.002 0 0 0-2.83-2.83l-1.25 1.25a.751.751 0 0 1-1.042-.018.751.751 0 0 1-.018-1.042Zm-4.69 9.64a1.998 1.998 0 0 0 2.83 0l1.25-1.25a.751.751 0 0 1 1.042.018.751.751 0 0 1 .018 1.042l-1.25 1.25a3.5 3.5 0 1 1-4.95-4.95l2.5-2.5a3.5 3.5 0 0 1 4.95 0 .751.751 0 0 1-.018 1.042.751.751 0 0 1-1.042.018 1.998 1.998 0 0 0-2.83 0l-2.5 2.5a1.998 1.998 0 0 0 0 2.83Z"></path></svg></a></div>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">TextBelt 版权所有 (C) 2018 Ian Webster</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">特此授予获得此软件和相关文档文件（“软件”）副本的任何人免费许可，以无限制方式处理软件，包括但不限于使用、复制、修改、合并、发布、分发、再许可和/或销售软件副本的权利，并允许向其提供软件的人员这样做，但须遵守以下条件：</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">上述版权声明和本许可声明均应包含在软件的所有副本或重要部分中。</font></font></p>
+<p dir="auto"><font style="vertical-align: inherit;"><font style="vertical-align: inherit;">软件按“原样”提供，不作任何明示或暗示的保证，包括但不限于适销性、特定用途的适用性和不侵权性的保证。在任何情况下，作者或版权持有者均不对因软件或使用或其他处理软件而引起的或与之相关的任何索赔、损害或其他责任承担责任，无论是合同行为、侵权行为还是其他行为。</font></font></p>
+</article></div>
